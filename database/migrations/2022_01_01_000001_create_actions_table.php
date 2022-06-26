@@ -14,7 +14,10 @@ return new class extends Migration {
     {
         Schema::create('actions', function(Blueprint $table) {
             $table->id();
-
+            /* $table->integer('post_id');
+            $table->integer('user_id'); */
+            $table->morph('actionable');
+            
             // TODO: Create actions table
 
             $table->timestamps();
